@@ -1,0 +1,70 @@
+[user]
+	name = Risheit Munshi
+	email = Risheit.Munshi@mail.utoronto.ca
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[alias]
+	b = branch
+	c = commit
+	t = tree
+	s = stash
+	ps = push
+	pl = pull
+	sw = switch
+	st = status
+	f = fetch
+	fu = !git fetch && git stash && git switch $(git mainbranch) && git pull --ff && git checkout - && git stash pop
+	tree = log --all --graph --decorate --abbrev-commit --format=format:'%C(bold magenta)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+	ftree = log --graph
+	rbm = rebase origin/main
+	c- = checkout -
+	undo = reset --soft HEAD~1
+	sp = stash pop
+	sd = stash drop
+	sc- = !git stash && git checkout -
+	pc- = !git checkout - && git stash pop
+	cm = !git switch $(git mainbranch)
+	scm = !git stash && git switch master
+	sl = stash list
+	ra = restore .
+	rs = restore --staged .
+	aa = add .
+	mainbranch = !git show-ref --verify --quiet refs/heads/master && echo master || echo main
+[push]
+	autosetupremote = true
+	followTags = true
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+	editor = nvim
+	excludesfile = /Users/rishe/.gitignore_global
+[pull]
+	ff = only
+	rebase = true
+[http]
+	postBuffer = 524288000
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicprefix = true
+	renames = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
