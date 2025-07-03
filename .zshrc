@@ -63,6 +63,14 @@ fi
 
     setopt histignorealldups sharehistory
 
+    ## Ensure git exists
+
+    if ! command -v git >/dev/null; then
+        echo "Could not find the program: git. Please install manually."
+        echo "Aborting configuration..."
+        return 1 
+    fi
+
     ## Set up homebrew if this is MacOS
     
     if ! [[ -v ZSH_ON_MACOS && -x "${CUSTOM_BREW_DIR:-/opt/homebrew}/bin/brew" ]]; then
@@ -166,11 +174,17 @@ fi
 
     ## Plugins and external programs
     
-    if ! autoinstall git; then
-        echo "Git required to continue configuration. Please install manually."
-        return 1 
-    fi
     autoinstall nvim neovim || unalias vim
+
+    # Set up tiling window manager on MacOS
+    if [[ -v ZSH_ON_MACOS ]] && ! command -v aerospace >/dev/null; then
+        brew install aerospace --cask nikitabobko/tap/aerospace
+        if ! command -v borders >/dev/null; then
+            brew tap FelixKratz/formulae
+            brew install borders
+        fi
+        echo "Installed aerospace as a tiling window manager. This will start up automatically next time you log in."
+    fi
 
     # Setup oh-my-posh Terminal
     if ! command -v oh-my-posh >/dev/null; then
