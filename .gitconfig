@@ -42,6 +42,7 @@
 	autocrlf = input
 	editor = nvim
 	excludesfile = /Users/rishe/.gitignore_global
+	pager = less -LRc --mouse
 [pull]
 	ff = only
 	rebase = true
@@ -68,3 +69,16 @@
 	all = true
 [help]
 	autocorrect = prompt
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+[merge]
+    conflictstyle = zdiff3
+[pager]
+		diff = LESS='LRc --mouse' delta
+		show = LESS='LRc --mouse' delta
+		stash = LESS='LRc --mouse' delta
+		log = LESS='LRc --mouse' delta
+		reflog = LESS='LRc --mouse' delta

@@ -184,9 +184,9 @@ automatically-unhide-macos-hidden-apps = false
     run = 'layout floating'
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.accessibility.universalAccessAuthWarn'
+    if.app-id = 'org.qbittorrent.qBittorrent'
     run = 'layout floating'
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.UserNotificationCenter'
+    if.app-id = 'com.apple.finder'
     run = 'layout floating'

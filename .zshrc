@@ -119,7 +119,7 @@ fi
     alias la='ls -A'
     alias l='ls -CF'
 
-    alias less='less -R'
+    alias less='less -iRx4'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -197,6 +197,8 @@ fi
     fi
     eval "$(oh-my-posh init zsh --config ${OH_MY_POSH_THEME})"
 
+    # Install delta for git diffs
+    autoinstall delta git-delta
 
     # Source and autoinstall zsh auto-suggestions
     if [[ -v ZSH_ON_MACOS && ! -f "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
