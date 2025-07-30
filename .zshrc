@@ -7,7 +7,7 @@ fi
 
 
 
-## Configuration
+## Configuration 
 () {
     ## Configuration variables
     
@@ -111,8 +111,10 @@ fi
         alias matlab="/Applications/MATLAB_R2024a.app/bin/matlab -nodesktop"
     fi
 
-    alias cd-='cd -'
-    alias cd..='cd ..'
+    alias 'cd-'='cd -'
+    alias 'cd..'='cd ..'
+    alias -- '-'='cd -' # Don't treat -= as an option
+    alias '..'='cd ..'
 
     alias ls='ls -CF --color=auto'
     alias ll='ls -alhF'
@@ -134,6 +136,7 @@ fi
     alias gb='git b'
     alias gc='git commit'
     alias gc-='git c-'
+    alias gdiff='git diff'
     alias gst='git status'
     alias gps='git push'
     alias gpl='git pull'
