@@ -1,5 +1,4 @@
 # Place a copy of this 8onfig to ~/.aerospace.toml After that, you can edit ~/.aerospace.toml to your liking
-
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -61,10 +60,10 @@ automatically-unhide-macos-hidden-apps = false
 [gaps]
     inner.horizontal = 14
     inner.vertical =   14
-    outer.left =       14
-    outer.bottom =     14
-    outer.top =        14
-    outer.right =      14
+    outer.left =       18
+    outer.bottom =     18
+    outer.top =        18
+    outer.right =      18
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -190,3 +189,4 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-id = 'com.apple.finder'
     run = 'layout floating'
+

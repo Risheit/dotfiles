@@ -86,6 +86,7 @@ fi
     export_path $SCRIPTS_DIR
     export_path "$HOME/.ghcup/bin"
     export_path "$HOME/.ghcup/ghc/9.8.2/bin"
+    export_path "$HOME/.deno/env"
 
     if [[ -v ZSH_ON_MACOS ]]; then
         export_path "$BREW_PREFIX/opt/openjdk/bin" 

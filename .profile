@@ -27,3 +27,4 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 . "$HOME/.cargo/env"
+. "/Users/rishe/.deno/env"

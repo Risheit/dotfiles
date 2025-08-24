@@ -128,3 +128,4 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(oh-my-posh init bash --config /mnt/c/Users/rishe/AppData/Local/Programs/oh-my-posh/themes/iterm2.omp.json)"
 clear
 . "$HOME/.cargo/env"
+. "/Users/rishe/.deno/env"
