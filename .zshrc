@@ -274,6 +274,7 @@ fi
     # Display and autoinstall fastfetch 
     autoinstall fastfetch
     command -v fastfetch >/dev/null && fastfetch --logo /Users/rishe/.config/fastfetch/logo.png --logo-type kitty --logo-width 45 
+    alias 'fastfetch'='echo && fastfetch --logo /Users/rishe/.config/fastfetch/logo.png --logo-type kitty --logo-width 45'
 
     # Source and autoinstall zsh-syntax-highlighting. 
     # Must be sourced at the end of configuration.
