@@ -288,6 +288,13 @@ fi
     fi
     [[ -v ZSH_ON_MACOS ]] && source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
     [[ -v ZSH_ON_LINUX ]] && source "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+    # Export postgres on MacOS
+    if [[ -v ZSH_ON_MACOS && -d "${CUSTOM_BREW_DIR:-/opt/homebrew}/opt/postgresql@17/bin/" ]]; then
+      export_path "${CUSTOM_BREW_DIR:-/opt/homebrew}/opt/postgresql@17/bin"
+      # export LDFLAGS=$LDFLAGS:" -L${CUSTOM_BREW_DIR:-/opt/homebrew}/opt/postgresql@17/lib"
+      # export CPPFLAGS=$CPPFLAGS:" -I${CUSTOM_BREW_DIR:-/opt/homebrew}/opt/postgresql@17/include"
+    fi
 }
 
 ## Custom Functions

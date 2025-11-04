@@ -119,6 +119,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+    alt-q = 'workspace free'
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
@@ -130,6 +131,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-9 = 'workspace 9'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+    alt-shift-q = 'move-node-to-workspace free'
     alt-shift-1 = 'move-node-to-workspace 1'
     alt-shift-2 = 'move-node-to-workspace 2'
     alt-shift-3 = 'move-node-to-workspace 3'
@@ -190,3 +192,10 @@ automatically-unhide-macos-hidden-apps = false
     if.app-id = 'com.apple.finder'
     run = 'layout floating'
 
+[[on-window-detected]]
+    if.app-id = 'com.electron.dockerdesktop'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.hnc.Discord'
+    run = 'layout floating'
