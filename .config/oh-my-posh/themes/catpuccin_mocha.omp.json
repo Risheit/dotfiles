@@ -12,9 +12,14 @@
       "alignment": "left",
       "segments": [
         {
+          "type": "python",
+          "style": "plain",
+          "template": "({{ .Venv }}) "
+        },
+        {
           "foreground": "p:os",
           "style": "plain",
-          "template": "{{.Icon}} ",
+          "template": "{{ if eq .Segment.Index 0 }}{{.Icon}} {{ end }}",
           "type": "os"
         },
         {
