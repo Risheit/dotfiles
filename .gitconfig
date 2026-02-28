@@ -48,10 +48,6 @@
 	rebase = true
 [http]
 	postBuffer = 524288000
-[credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
-[credential "https://dev.azure.com"]
-	useHttpPath = true
 [column]
 	ui = auto
 [branch]
@@ -79,3 +75,8 @@
 [pager]
 	diff = LESS='LFRXc --mouse' delta
   log = false
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
