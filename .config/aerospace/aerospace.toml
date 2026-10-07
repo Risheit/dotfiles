@@ -211,3 +211,11 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-id = 'com.valvesoftware.steam'
     run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.valvesoftware.steam.helper'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.ActivityMonitor'
+    run = 'layout floating'

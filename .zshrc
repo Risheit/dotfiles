@@ -87,6 +87,7 @@ fi
     export_path "$HOME/.ghcup/bin"
     export_path "$HOME/.ghcup/ghc/9.8.2/bin"
     export_path "$HOME/.deno/env"
+    export_path "$HOME/.local/bin/"
 
     if [[ -v ZSH_ON_MACOS ]]; then
         export_path "$BREW_PREFIX/opt/openjdk/bin" 
@@ -267,6 +268,9 @@ fi
         fi
     fi
 
+    # Allow Opencode web search access
+    [[ -e "$BREW_PREFIX/bin/opencode" ]] && export OPENCODE_ENABLE_EXA=1
+
     # Use modern completion system
     autoload -Uz compinit
     compinit
@@ -309,4 +313,9 @@ if [[ -v ZSH_DEBUGRC ]]; then
     zprof
 fi
 ####
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/rishe/.lmstudio/bin"
+# End of LM Studio CLI section
 

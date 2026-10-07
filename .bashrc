@@ -129,3 +129,7 @@ eval "$(oh-my-posh init bash --config /mnt/c/Users/rishe/AppData/Local/Programs/
 clear
 . "$HOME/.cargo/env"
 . "/Users/rishe/.deno/env"
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/rishe/.lmstudio/bin"
+# End of LM Studio CLI section
+
