@@ -8,14 +8,20 @@
         "baseURL": "http://127.0.0.1:9999/v1",
       },
       "models": {
-        "unsloth/Qwen3.5-9B-GGUF:Q6_K": {
-          "name": "Qwen3.5: 9B (local)",
+        "unsloth/Qwen3.6-35B-A3B-GGUF:UD-IQ2_M": {
+          "name": "Qwen3.6: A3B (local)",
           "limit": {
-            "context": 60000,
+            "context": 92000,
             "output": 8000,
           },
           "reasoning": true,
           "options": {
+            "temperature": 0.7,
+            "top_p": 0.8,
+            "top_k": 20,
+            "min_p": 0.0,
+            "presence_penalty": 1.5,
+            "repetition_penalty": 1.0,
             "chat_template_kwargs": {
               "enable_thinking": false,
             },
@@ -28,13 +34,17 @@
     },
   },
   "mcp": {
-    "Git": {
+    "git": {
       "type": "local",
       "command": [
         "sh",
         "-c",
         "exec mcp-server-git --repository \"$(git rev-parse --show-toplevel 2>/dev/null || echo .)\"",
       ],
+    },
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "@playwright/mcp@latest", "--browser=headless"],
     },
   },
   "permission": {
@@ -57,13 +67,6 @@
       "whoami": "allow",
       "env": "allow",
       "find *": "allow",
-    },
-  },
-  "agent": {
-    "title": {
-      "options": {
-        "temperature": 0.5,
-      },
     },
   },
 }

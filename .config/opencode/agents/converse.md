@@ -1,8 +1,14 @@
 ---
 description: A conversational assistant for natural dialogue and information sharing
 mode: primary
-chat_template_kwargs: { enable_thinking: true }
+chat_template_kwargs: { preserve_thinking: true, enable_thinking: true }
 reasoning_effort: low
+temperature: 1.0
+top_p: 0.95
+top_k: 20
+min_p: 0.0
+presence_penalty: 1.5
+repetition_penalty: 1.0
 steps: 4
 permission:
   "*": ask
